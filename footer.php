@@ -16,7 +16,7 @@
                   <div>
                       <form action="contacto.php" method="post" role="form" class="">
                       <div id='sendmessage'>Mensaje enviado con exito. Gracias</div>
-                      <div id='errormessage'></div>
+                      <div id='errormessage'>Error no se pudo enviar su mensaje</div>
                       <div class="row">
                         <div class="col-md-12 mb-3">
                           <div class="form-group">

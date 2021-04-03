@@ -67,42 +67,6 @@ require("admin/conexion.php");
       </div>
       <div class="row">
 
-<!-- Button trigger modal
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<?php
-if(isset($_GET['idProducto'])){
-  $id=$_GET['idProducto'];
-  $sql='SELECT *FROM productos WHERE idProducto=?';
-  $producto=$conexion->prepare($sql);
-  $producto->bindParam(1,$id,PDO::PARAM_INT);
-  if($producto->execute()){
-    $fila=$producto->fetch();
-  }
-?>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><?php if(isset($_GET['idProducto'])){ echo $fila['Nombre']; }?></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<?php } ?>
-
       <?php
  $sql='SELECT *FROM productos ';
  $rows=$conexion->prepare($sql);
@@ -111,9 +75,8 @@ if(isset($_GET['idProducto'])){
 		echo '
 
       <div class="col-md-3">
-          <div class="work-box">
-            <a href="idProducto='.$row['idProducto'].'" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <div class="work-img">
+          <div class="work-box"> '
+             .'<div class="work-img">
                 <img src="img/productos/'.$row['Imagen'].'" class="img-fluid">
               </div>
               <div class="work-content">
@@ -130,37 +93,34 @@ if(isset($_GET['idProducto'])){
                   </div>
                 </div>
               </div>
-            </a>
           </div>
         </div>
 
         ';
  }
-
-
-
  ?>
-    
-      
-         </section>
+    </section>
 
-        
      <!-- Quienes somos -->
   <section id="quienes" class="portfolio-mf sect-pt4 route">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="title-box text-center">
-            <h3 class="title-a">
-             Quiénes Somos
+            <h3 class="title-a mb-5">
+             Quiénes Somos<div class="line-mf"></div>
             </h3>
-            <p>
-              Somos una empresa familiar que empezo hace más de 25 años en el mercado
+            <div class="row">
+            </div>
+            <p class=" col-12" style="font-size: 20px;">
+                Somos una empresa familiar que empezo hace más de 25 años en el mercado.
+                Nuestros valores están basados siempre en la honestidad, respeto y profesionalismo, ofreciendo a nuestros clientes los mejores productos y la mejor atención para obtener los mejores resultados y lo más importante, su satisfacción.
             </p>
-            <div class="line-mf"></div>
+            </div>
           </div>
         </div>
       </div>
 
   <!-- End -->
+
 
